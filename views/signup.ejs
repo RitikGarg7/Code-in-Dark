@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code in Dark</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <style >
+        .form1{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<br><br><br>
+<div class="row padding">
+    <div class="col-3"></div>
+    <div class="col-6" align="center">
+        <div class="loginUsers padding">
+            <h1 style="color: red">
+                REGISTER
+            </h1>
+            <hr style="color: red">
+            <br>
+            <form method="post" action="/signup">
+                <div>
+                    <div class="col-6">
+                        <input name="name" placeholder="name" class="form1">
+                        <br>
+                        <br>
+                        <input name="college" placeholder="college" class="form1">
+                        <br>
+                        <br>
+                        <input name="username" placeholder="username" class="form1">
+                        <br>
+                        <br>
+                        <input type="password" name="password" placeholder="password" class="form1">
+                        <br>
+                        <br>
+                        <input type="submit" class="form1">
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div>
+                <h6 style="color: grey">
+                    Already Registered?
+                    <a style="font-size: 20px;" href="/login">Login </a>
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

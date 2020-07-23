@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../codeMirror/lib/codemirror.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../scriptQuestion.js"></script>
+    <script src="../../codeMirror/lib/codemirror.js"></script>
+    <script src="../../codeMirror/mode/xml/xml.js"></script>
+    <script src="../../codeMirror/mode/clike/clike.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="../style.css">-->
+    <style>
+        .CodeMirror{
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+<div style="margin-top: 50px ">
+    <b>
+        <h1>
+            Question 2
+        </h1>
+    </b>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+            You are given an array which contains n elements. A particular element is called unique if if in binary representation of that number, no two or more consecutive bits are set. Your task is to count the number of unique elements in the given array.
+            <br><br><b>
+            Input Format</b><br>
+            The first line of the input contains an integer n denoting the size of the array. Next line contains n space-separated integers denoting the elements of the array.
+<br><br><b>
+            Output Format
+        </b><br> Output a single integer denoting the number of unique elements.
+<br><br><b>
+            Constraints
+        </b><br> 1<=n<=10^6
+            <br>1<=Ai<=10^9
+<br><br><b>
+            Sample Input
+        </b><br> 5
+            <br>64 12 3 72 38
+<br><br><b>
+            Sample Output
+        </b><br> 2
+<br><br><b>
+            Sample Explanation
+        </b><br> 64 and 72 are unique elements.
+            <br>Binary representation of all the elements are as follows:
+            <br>64 - 1000000
+            <br>12- 110
+            <br>4- 11
+            <br>72- 1001000
+            <br>38- 100110
+<br><br>
+            64 and 72 does not contain consecutive set bits, hence unique.
+
+            <br><br><br>
+            <b>PeakTime : 6 seconds</b>
+        </div></div>
+        </div>
+<br><br>
+<form method="post" action="/question/ques2">
+    <input id="editor" name="q2code">
+    <br>
+    <br>
+    <button type="button" onClick="onClick()">SHOW SCREEN</button>
+    <input type="submit" value="SUBMIT">
+</form>
+<p>Attempts : <a id="clicks">0</a></p>
+<p id="output"></p>
+<script>
+
+    var editor = CodeMirror.fromTextArea(
+            document.getElementById('editor'), {
+                backgroundColor: "#ffffff",
+                mode: "xml",
+                // theme:"dracula",
+                lineNumbers: true
+            }
+    );
+    editor.setSize("800", "600")
+    let clicks = 0;
+    let done = false;
+
+
+    function onClick() {
+        if(clicks<3){
+            document.getElementsByClassName('CodeMirror')[0].style.color= 'black';
+            setTimeout(function () {
+                document.getElementsByClassName('CodeMirror')[0].style.color= 'white';
+            },6000)
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+        }
+    };
+    function onSubmit() {
+        if(done==false){
+            done=true;
+            var code=editor.getValue();
+            console.log(code);
+
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>

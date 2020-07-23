@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../codeMirror/lib/codemirror.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../scriptQuestion.js"></script>
+    <script src="../../codeMirror/lib/codemirror.js"></script>
+    <script src="../../codeMirror/mode/xml/xml.js"></script>
+    <script src="../../codeMirror/mode/clike/clike.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="../style.css">-->
+    <style>
+        .CodeMirror{
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+<div style="margin-top: 50px ">
+    <b>
+        <h1>
+            Question 4
+        </h1>
+    </b>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            Given two integers a and b, find the last digit of a!/b!
+            <br><br><b>
+            Input format:
+        </b><br>
+            The first and only line of input contains two integers, a and b
+<br><br><b>
+            Output format:
+        </b><br> A single integer denoting the last digit of a!/b!
+<br><br><b>
+            Constraints:
+        </b><br> 1<=a<=10^18
+            <br>1<=b<=10^18
+<br><br><b>
+            Sample Input:
+        </b><br> 4 2
+<br><br><b>
+            Sample Output:
+        </b><br> 2
+<br><br><b>
+            Sample Explanation:
+        </b> 4!/2! equals 12 with the last digit as 2
+<br><br>
+            <br>
+            <b>PeakTime : 8 seconds</b>
+        </div>
+    </div>
+</div>
+<br><br>
+<form method="post" action="/question/ques4">
+    <input id="editor" name="q4code">
+    <br>
+    <br>
+    <button type="button" onClick="onClick()">SHOW SCREEN</button>
+    <input type="submit" value="SUBMIT">
+</form>
+<p>Attempts : <a id="clicks">0</a></p>
+<p id="output"></p>
+<script>
+
+    var editor = CodeMirror.fromTextArea(
+            document.getElementById('editor'), {
+                backgroundColor: "#ffffff",
+                mode: "xml",
+                // theme:"dracula",
+                lineNumbers: true
+            }
+    );
+    editor.setSize("800", "600")
+    let clicks = 0;
+    let done = false;
+
+
+    function onClick() {
+        if(clicks<3){
+            document.getElementsByClassName('CodeMirror')[0].style.color= 'black';
+            setTimeout(function () {
+                document.getElementsByClassName('CodeMirror')[0].style.color= 'white';
+            },8000)
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+        }
+    };
+    function onSubmit() {
+        if(done==false){
+            done=true;
+            var code=editor.getValue();
+            console.log(code);
+
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>

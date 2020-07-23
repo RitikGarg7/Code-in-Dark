@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../codeMirror/lib/codemirror.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../scriptQuestion.js"></script>
+    <script src="../../codeMirror/lib/codemirror.js"></script>
+    <script src="../../codeMirror/mode/xml/xml.js"></script>
+    <script src="../../codeMirror/mode/clike/clike.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="../style.css">-->
+    <style>
+        .CodeMirror{
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+<div style="margin-top: 50px ">
+    <b>
+        <h1>
+            Question 3
+        </h1>
+    </b>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            A string is called a special string if it consists only of lowercase letters a and b and there is at least one b between two a’s in the string . You are given the length n of the string and your task is to find the number of special strings of length n. Since the number of strings may be very large, therefore print it modulo 10^9+7.
+<br><br><b>
+            Input Format:
+        </b><br> The first and only line of input contains n, denoting the length of the string.
+<br><br><b>
+            Output Format:
+        </b><br> Output a single integer denoting the number of special strings of length n modulo 10^9+7.
+<br><br><b>
+            Constraints:
+        </b><br> 1<=N<=10^7
+<br><br><b>
+            Sample Input:
+        </b><br> 4
+<br><br><b>
+            Sample Output:
+        </b><br> 8
+<br><br><b>
+            Sample Explanation:
+        </b><br> The special strings of length 4 are : <br>abab<br>abba<br>abbb<br>baba<br>babb<br>bbab<br>bbba<br>bbbb
+<br>
+            <br><br><br>
+            <b>PeakTime : 7 seconds</b>
+
+
+        </div></div>
+
+</div>
+<br><br>
+<form method="post" action="/question/ques3">
+    <input id="editor" name="q3code">
+    <br>
+    <br>
+    <button type="button" onClick="onClick()">SHOW SCREEN</button>
+    <input type="submit" value="SUBMIT">
+</form>
+<p>Attempts : <a id="clicks">0</a></p>
+<p id="output"></p>
+<script>
+
+    var editor = CodeMirror.fromTextArea(
+            document.getElementById('editor'), {
+                backgroundColor: "#ffffff",
+                mode: "xml",
+                // theme:"dracula",
+                lineNumbers: true
+            }
+    );
+    editor.setSize("800", "600")
+    let clicks = 0;
+    let done = false;
+
+
+    function onClick() {
+        if(clicks<3){
+            document.getElementsByClassName('CodeMirror')[0].style.color= 'black';
+            setTimeout(function () {
+                document.getElementsByClassName('CodeMirror')[0].style.color= 'white';
+            },7000)
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+        }
+    };
+    function onSubmit() {
+        if(done==false){
+            done=true;
+            var code=editor.getValue();
+            console.log(code);
+
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>

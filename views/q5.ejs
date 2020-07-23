@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../codeMirror/lib/codemirror.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../scriptQuestion.js"></script>
+    <script src="../../codeMirror/lib/codemirror.js"></script>
+    <script src="../../codeMirror/mode/xml/xml.js"></script>
+    <script src="../../codeMirror/mode/clike/clike.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="../style.css">-->
+    <style>
+        .CodeMirror{
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+<div style="margin-top: 50px ">
+    <b>
+        <h1>
+            Question 5
+        </h1>
+    </b>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            Alice, Bob and Candice are three friends. Recently they came back from their internships where they got A,B and C units of money as their stipend. As they believe in equality they want each of them to have equal units of money.
+            <br>
+            To achieve their goal they perform a set of operations. In each operation two out of three friends will be chosen. Let’s say their amounts are X and Y such that X &lt Y. The lower amount X will be doubled by taking some money from friend having amount Y. Formally, new amounts will be X+X and Y-X respectively.
+            <br>
+            They wonder if it is possible to have equal amount of money with each of them after some sequence of operations.
+            <br><br><b>
+            Constraints
+            </b>
+            <br>
+            1<=A,B,C<=1000
+            <br><br>
+            <b>
+            Input format
+            </b>
+            <br>
+            Three integers A,B and C will be given in a single line
+            <br><br><b>
+            Output Format
+            </b><br>
+            Print “yes”, if it is possible to have equal amount of money with each of them after some set of operations.
+            <br>
+            Else, print “no”
+            <br><br><b>
+            Sample Input 1
+            </b><br> 3 1 2
+            <br><br><b>
+            Sample Output 1
+            </b><br>yes
+            <br><br><b>
+            Explanation
+            </b>
+            Alice and Bob will perform 1st operation. Their amount will transform from (3,1) to (2,2).
+            <br>
+            After the operation the amounts will be (2,2,2)
+            <br><br><b>
+            Sample Input 2
+            </b><br>
+            1 1 2
+            <br><br>
+            <b>
+            Sample Output 2
+            </b><br>
+            no
+            <br><br><b>
+            Explanation
+            </b>
+            No matter what operations are performed, one friend will always have 2 units of money.
+            <br><br><br>
+            <b>PeakTime : 10 seconds</b>
+
+        </div>
+    </div>
+
+</div>
+<br><br>
+<form method="post" action="/question/ques5">
+    <input id="editor" name="q5code">
+    <br>
+    <br>
+    <button type="button" onClick="onClick()">SHOW SCREEN</button>
+    <input type="submit" value="SUBMIT">
+</form>
+<p>Attempts : <a id="clicks">0</a></p>
+<p id="output"></p>
+<script>
+
+    var editor = CodeMirror.fromTextArea(
+            document.getElementById('editor'), {
+                backgroundColor: "#ffffff",
+                mode: "xml",
+                // theme:"dracula",
+                lineNumbers: true
+            }
+    );
+    editor.setSize("800", "600")
+    let clicks = 0;
+    let done = false;
+
+
+    function onClick() {
+        if(clicks<3){
+            document.getElementsByClassName('CodeMirror')[0].style.color= 'black';
+            setTimeout(function () {
+                document.getElementsByClassName('CodeMirror')[0].style.color= 'white';
+            },10000)
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+        }
+    };
+    function onSubmit() {
+        if(done==false){
+            done=true;
+            var code=editor.getValue();
+            console.log(code);
+
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>
